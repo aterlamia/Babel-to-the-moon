@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GlowSharder.shader" type="Shader" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 140
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/color = Color( 0.662745, 0.0941176, 0, 0.0745098 )
+shader_param/fresnel_power = 0.2
+shader_param/edge_intensity = 2.0
+shader_param/fill_amount = 1.0
+shader_param/pulsing_strength = 0.25
+shader_param/pulsing_speed = 1.161
+shader_param/scanline_period = 2.0
+shader_param/scanline_width = 0.1
+shader_param/scanline_intensity = 0.2
+shader_param/pattern_scroll_speed = 0.025
+shader_param/pattern_uv_offset = Vector2( 6, 3 )
+shader_param/pattern_texture = SubResource( 2 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 6, 3, 0.1 )
+
+[node name="Forcefield" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53314, 2.49828 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = null

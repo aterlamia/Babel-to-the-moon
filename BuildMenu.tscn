@@ -1,0 +1,266 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://BuildMenu.cs" type="Script" id=1]
+[ext_resource path="res://Assets/BUTTONS/martk.png" type="Texture" id=2]
+[ext_resource path="res://Assets/BUTTONS/farm.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BUTTONS/temple.png" type="Texture" id=4]
+[ext_resource path="res://Assets/BUTTONS/foundation.ong.png" type="Texture" id=5]
+[ext_resource path="res://UItheme.tres" type="Theme" id=6]
+[ext_resource path="res://label.cs" type="Script" id=7]
+[ext_resource path="res://Assets/BUTTONS/food.png" type="Texture" id=8]
+[ext_resource path="res://Assets/BUTTONS/gold.png" type="Texture" id=9]
+[ext_resource path="res://Assets/BUTTONS/people.png" type="Texture" id=10]
+[ext_resource path="res://Assets/BUTTONS/stone.png" type="Texture" id=11]
+[ext_resource path="res://Assets/BUTTONS/wood.png" type="Texture" id=12]
+[ext_resource path="res://Food.cs" type="Script" id=13]
+[ext_resource path="res://TopMEnu.cs" type="Script" id=14]
+[ext_resource path="res://Assets/BUTTONS/faith.png" type="Texture" id=15]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[node name="BuildMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.3554
+margin_top = 1.5262
+margin_right = 16.3556
+margin_bottom = 1.52618
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Market" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 235.0
+margin_top = -146.0
+margin_right = 362.0
+margin_bottom = -19.0
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Market"]
+margin_left = 39.685
+margin_top = 127.389
+margin_right = 83.685
+margin_bottom = 141.389
+text = "Market"
+
+[node name="Foundation" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 369.84
+margin_top = -145.781
+margin_right = 496.84
+margin_bottom = -18.7808
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Foundation"]
+margin_left = 42.0661
+margin_top = 128.579
+margin_right = 82.0661
+margin_bottom = 159.579
+text = "Entry
+"
+
+[node name="Farm" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 497.64
+margin_top = -143.609
+margin_right = 624.64
+margin_bottom = -16.6093
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Farm"]
+margin_left = 42.0661
+margin_top = 128.579
+margin_right = 82.0661
+margin_bottom = 159.579
+text = "Farm
+"
+
+[node name="Temple" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 630.64
+margin_top = -143.109
+margin_right = 757.64
+margin_bottom = -16.1093
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Temple"]
+margin_left = 42.0661
+margin_top = 128.579
+margin_right = 82.0661
+margin_bottom = 159.579
+text = "Temple
+"
+
+[node name="TopMEnu" type="Panel" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+margin_left = -16.0065
+margin_top = -2.57275
+margin_right = -10.0066
+margin_bottom = 42.4272
+theme = ExtResource( 6 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+_woodLabel = NodePath("Wood/Label")
+_foodLabel = NodePath("Food/Label")
+_peopleLabel = NodePath("People/Label")
+_faithLabel = NodePath("Faith/Label")
+_stoneLabel = NodePath("Stone/Label")
+_goldLabel = NodePath("Gold/Label")
+
+[node name="Wood" type="TextureButton" parent="TopMEnu"]
+margin_left = 414.995
+margin_top = 0.601074
+margin_right = 454.995
+margin_bottom = 40.6011
+texture_normal = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopMEnu/Wood"]
+margin_left = 49.8187
+margin_top = 10.1136
+margin_right = 65.8187
+margin_bottom = 49.1136
+text = "0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Faith" type="TextureButton" parent="TopMEnu"]
+margin_left = 511.837
+margin_top = 0.930328
+margin_right = 551.837
+margin_bottom = 40.9303
+texture_normal = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopMEnu/Faith"]
+margin_left = 49.8187
+margin_top = 10.1136
+margin_right = 65.8187
+margin_bottom = 49.1136
+text = "0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="People" type="TextureButton" parent="TopMEnu"]
+margin_left = 111.561
+margin_top = 0.268219
+margin_right = 151.561
+margin_bottom = 40.2682
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopMEnu/People"]
+margin_left = 37.8322
+margin_top = 11.9865
+margin_right = 53.8322
+margin_bottom = 50.9865
+text = "0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stone" type="TextureButton" parent="TopMEnu"]
+margin_left = 310.636
+margin_top = 2.45117
+margin_right = 350.636
+margin_bottom = 42.4512
+texture_normal = ExtResource( 11 )
+expand = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopMEnu/Stone"]
+margin_left = 50.9424
+margin_top = 8.24069
+margin_right = 66.9424
+margin_bottom = 47.2407
+text = "0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gold" type="TextureButton" parent="TopMEnu"]
+margin_left = 10.8081
+margin_top = 3.47728
+margin_right = 50.8081
+margin_bottom = 43.4773
+texture_normal = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopMEnu/Gold"]
+margin_left = 42.3272
+margin_top = 9.36441
+margin_right = 58.3272
+margin_bottom = 31.3644
+text = "0"
+
+[node name="Food" type="TextureButton" parent="TopMEnu"]
+margin_left = 220.513
+margin_top = 2.23167
+margin_right = 260.513
+margin_bottom = 42.2317
+texture_normal = ExtResource( 8 )
+expand = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopMEnu/Food"]
+margin_left = 39.3306
+margin_top = 11.9865
+margin_right = 55.3306
+margin_bottom = 33.9865
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Market" to="." method="_on_Market_pressed"]
+[connection signal="pressed" from="Foundation" to="." method="_on_Foundation_pressed"]
+[connection signal="pressed" from="Farm" to="." method="_on_Farm_pressed"]
+[connection signal="pressed" from="Temple" to="." method="_on_Temple_pressed"]

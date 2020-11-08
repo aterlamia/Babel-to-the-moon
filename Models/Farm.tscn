@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Models/farm.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Models/Room.cs" type="Script" id=2]
+[ext_resource path="res://Forcefield.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Jobs/FarmJob.cs" type="Script" id=4]
+
+[node name="XlargeRoomBase" type="Spatial"]
+script = ExtResource( 2 )
+_size = 8
+
+[node name="Forcefield" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.94551, 0, 0, 0, 1, 0, 0, 0, 1, -0.10693, 1.50657, 2.51963 )
+
+[node name="Job" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="farm" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
